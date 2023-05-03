@@ -3,7 +3,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./package.json .
 RUN npm i --silent
-COPY ./package.json .
+COPY . .
 EXPOSE 80
 ENV NODE_ENV="production"
 CMD ["npm","start"]

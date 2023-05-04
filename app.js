@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public/dist')))
 app.get('/', (req, res) => res.render('pages/index'))
 app.get('/phonelist', async (req, res) => {
 
-    const data = await axios.post('http://localhost:3000/extensions').then(resp => resp.data)
+    const data = await axios.post(`${process.env.DOMAIN}/extensions`).then(resp => resp.data)
     res.render('pages/phonelist', { data })
 })
 
